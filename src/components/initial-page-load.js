@@ -1,4 +1,5 @@
-import CreateElement from './create-element'
+import CreateElement from '../helpers/create-element'
+import Logo from './logo'
 
 // Functions purpose: Initially append page DOM elements
 export default function InitialPageLoad() {
@@ -15,4 +16,19 @@ export default function InitialPageLoad() {
 
   const headerDiv = CreateElement({element: 'div', className: 'header'})
   rightColumnDiv.appendChild(headerDiv)
+
+  // Creating a div for the logo to be centered in
+  const logoCenter = CreateElement({element: 'div', className: 'logoCenter'})
+  leftColumnDiv.appendChild(logoCenter)
+
+  // Append main logo to left coumn div
+  logoCenter.appendChild(Logo())
+
+  // Creating a div for the line to be centered in
+  const lineCenter = CreateElement({element: 'div', className: 'lineCenter'})
+  leftColumnDiv.appendChild(lineCenter)
+
+  // Creating and appending a line to the left column
+  const line = CreateElement({element: 'div', className: 'line'})
+  lineCenter.appendChild(line)
 }
