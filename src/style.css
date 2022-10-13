@@ -9,17 +9,33 @@ body {
 
 .leftColumn {
   height: 100vh;
-  width: 15vw;
+  width: 20vw;
   background: #EFEFEF;
 }
 
 .rightColumn {
   height: 100vh;
-  width: 85vw;
+  width: 80vw;
 }
 
 .header {
   height: 200px;
-  width: 85vw;
+  width: 80vw;
   background: #D9D9D9;
 } 
+
+.logoCenter, .lineCenter {
+  display: flex;
+  justify-content: center;
+}
+
+.icon {
+  width: 200px;
+  height: 200px;
+}
+
+.line {
+  height: 2px;
+  width: 15vw;
+  background: #5A49E3;
+}
