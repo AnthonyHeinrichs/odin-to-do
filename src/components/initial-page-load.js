@@ -12,4 +12,7 @@ export default function InitialPageLoad() {
   // Create div element for right hand page column and append to mainDiv
   const rightColumnDiv = CreateElement({element: 'div', className: 'rightColumn'})
   mainDiv.appendChild(rightColumnDiv)
+
+  const headerDiv = CreateElement({element: 'div', className: 'header'})
+  rightColumnDiv.appendChild(headerDiv)
 }
