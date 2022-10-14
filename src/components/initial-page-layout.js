@@ -1,8 +1,9 @@
 import CreateElement from '../helpers/create-element'
 import Logo from './logo'
+import './styles/layout-styles.css'
 
 // Functions purpose: Initially append page DOM elements
-export default function InitialPageLoad() {
+export default function InitialPageLayout() {
   // Grab content div from dist index.html file
    const mainDiv = document.getElementById('content')
   
