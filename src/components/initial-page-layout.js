@@ -1,5 +1,6 @@
-import CreateElement from '../helpers/create-element'
+import CreateElement from '../utils/create-element'
 import Logo from './logo'
+import TaskFilters from './task-filter'
 import './styles/layout-styles.css'
 
 // Functions purpose: Initially append page DOM elements
@@ -8,11 +9,11 @@ export default function InitialPageLayout() {
    const mainDiv = document.getElementById('content')
   
   // Create div element for left hand page column and append to mainDiv
-  const leftColumnDiv = CreateElement({element: 'div', className: 'leftColumn'})
+  const leftColumnDiv = CreateElement({element: 'div', className: 'leftColumn', domId: 'leftColumn'})
   mainDiv.appendChild(leftColumnDiv)
 
   // Create div element for right hand page column and append to mainDiv
-  const rightColumnDiv = CreateElement({element: 'div', className: 'rightColumn'})
+  const rightColumnDiv = CreateElement({element: 'div', className: 'rightColumn', domId: 'rightColumn'})
   mainDiv.appendChild(rightColumnDiv)
 
   const headerDiv = CreateElement({element: 'div', className: 'header'})
@@ -32,4 +33,6 @@ export default function InitialPageLayout() {
   // Creating and appending a line to the left column
   const line = CreateElement({element: 'div', className: 'line'})
   lineCenter.appendChild(line)
+
+  leftColumnDiv.appendChild(TaskFilters())
 }
