@@ -1,4 +1,4 @@
-import './style.css';
-import InitialPageLoad from "./components/initial-page-load";
+import './global-style.css';
+import InitialPageLayout from "./components/initial-page-layout";
 
-InitialPageLoad()
+InitialPageLayout()
