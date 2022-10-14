@@ -4,7 +4,8 @@ import FolderIcon from '../assets/folder.png'
 import DayIcon from '../assets/calendar-checkmark.png'
 import WeekIcon from '../assets/full-calendar.png'
 
-export default function TaskFilters() {
+// Functions purpose: Create dom elements for task buttons
+export default function TaskFiltersDom() {
   // Create main div for filters
   const mainFilterDiv = CreateElement({element: 'div', className: 'allFilters'})
 
@@ -13,8 +14,7 @@ export default function TaskFilters() {
   mainFilterDiv.appendChild(allTasksDiv)
 
   // Create folder icon and append to all tasks div
-  const folderIcon = CreateElement(
-    {
+  const folderIcon = CreateElement({
       element: 'img', 
       className:'filterIcon', 
       domSrc: FolderIcon, 
@@ -35,8 +35,7 @@ export default function TaskFilters() {
   mainFilterDiv.appendChild(dayTasksDiv)
 
   // Create day icon and append to all tasks div
-  const dueTodayIcon = CreateElement(
-    {
+  const dueTodayIcon = CreateElement({
       element: 'img', 
       className:'filterIcon', 
       domSrc: DayIcon, 
@@ -57,8 +56,7 @@ export default function TaskFilters() {
   mainFilterDiv.appendChild(weekTasksDiv)
 
   // Create due this week icon and append to all tasks div
-  const dueWeekIcon = CreateElement(
-    {
+  const dueWeekIcon = CreateElement({
       element: 'img', 
       className:'filterIcon', 
       domSrc: WeekIcon, 

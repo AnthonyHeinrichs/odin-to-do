@@ -1,6 +1,7 @@
 import CreateElement from '../utils/create-element'
 import Logo from './logo'
-import TaskFilters from './task-filter'
+import TaskFiltersDom from './task-filter-dom'
+import ProjectsListDom from './project-list-dom'
 import './styles/layout-styles.css'
 
 // Functions purpose: Initially append page DOM elements
@@ -34,5 +35,7 @@ export default function InitialPageLayout() {
   const line = CreateElement({element: 'div', className: 'line'})
   lineCenter.appendChild(line)
 
-  leftColumnDiv.appendChild(TaskFilters())
+  // Render to left column div the task filters and projects list
+  leftColumnDiv.appendChild(TaskFiltersDom())
+  leftColumnDiv.appendChild(ProjectsListDom())
 }

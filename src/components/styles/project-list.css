@@ -1,0 +1,26 @@
+.projectsTitle {
+  color: #0E0080;
+  margin-left: 48px;
+  margin-top: 48px;
+  font-size: 32px;
+}
+
+.newProjectsContainer {
+  display: flex;
+  gap: 10px;
+}
+
+.newProjectIcon {
+  height: 24px;
+  width: 24px;
+  margin-left: 48px;
+  align-self: center;
+}
+
+.newProjectButton {
+  border: none;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+  color: #0E0080;
+}
