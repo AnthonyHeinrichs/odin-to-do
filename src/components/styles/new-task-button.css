@@ -1,0 +1,20 @@
+.newTask {
+  display: flex;
+  justify-content: flex-end;
+  width: 60vw;
+  margin-top: 72px;
+}
+
+.newTaskIcon {
+  height: 18px;
+  width: 18px;
+}
+
+.newTaskButton {
+  font-family: 'Roboto', sans-serif;
+  border: none;
+  background: none;
+  font-size: 18px;
+  font-weight: 300;
+  color: #0E0080;
+}
