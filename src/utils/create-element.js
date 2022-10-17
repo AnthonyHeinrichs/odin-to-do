@@ -1,5 +1,5 @@
 // Functions purpose: create a dom element with recieved props and return it
-export default function CreateElement(
+export default function createElement(
   {
   element = undefined,
   className = undefined,

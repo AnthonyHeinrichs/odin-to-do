@@ -1,13 +1,13 @@
-import CreateElement from '../utils/create-element'
-import './styles/new-task-button.css'
-import PlusIcon from '../assets/plus.png'
+import createElement from '../../utils/create-element'
+import '../styles/new-task-button.css'
+import PlusIcon from '../../assets/plus.png'
 
 export default function NewTaskDom() {
   // Create new div for all new tasks
-  const newTaskDiv = CreateElement({element: 'div', className: 'newTask'})
+  const newTaskDiv = createElement({element: 'div', className: 'newTask'})
   
   // Create new icon img and append to div for all new tasks
-  const newTaskIcon = CreateElement({
+  const newTaskIcon = createElement({
     element: 'img',
     className: 'newTaskIcon',
     domSrc: PlusIcon,
@@ -16,7 +16,7 @@ export default function NewTaskDom() {
   newTaskDiv.appendChild(newTaskIcon)
   
   // Create new task button and append to div for all new tasks
-  const newTaskButton = CreateElement({element: 'button', className: 'newTaskButton', domText: 'Add task'})
+  const newTaskButton = createElement({element: 'button', className: 'newTaskButton', domText: 'Add task'})
   newTaskDiv.appendChild(newTaskButton)
   
   // Return new task div with appended elements

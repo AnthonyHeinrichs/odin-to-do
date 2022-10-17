@@ -1,20 +1,20 @@
-import CreateElement from '../utils/create-element'
-import './styles/task-filters.css' 
-import FolderIcon from '../assets/folder.png'
-import DayIcon from '../assets/calendar-checkmark.png'
-import WeekIcon from '../assets/full-calendar.png'
+import createElement from '../../utils/create-element'
+import '../styles/task-filters.css' 
+import FolderIcon from '../../assets/folder.png'
+import DayIcon from '../../assets/calendar-checkmark.png'
+import WeekIcon from '../../assets/full-calendar.png'
 
 // Functions purpose: Create dom elements for task buttons
 export default function TaskFiltersDom() {
   // Create main div for filters
-  const mainFilterDiv = CreateElement({element: 'div', className: 'allFilters'})
+  const mainFilterDiv = createElement({element: 'div', className: 'allFilters'})
 
   // Create div for first filter icon & button and append to main filters div
-  const allTasksDiv = CreateElement({element: 'div', className: 'filter'})
+  const allTasksDiv = createElement({element: 'div', className: 'filter'})
   mainFilterDiv.appendChild(allTasksDiv)
 
   // Create folder icon and append to all tasks div
-  const folderIcon = CreateElement({
+  const folderIcon = createElement({
       element: 'img', 
       className:'filterIcon', 
       domSrc: FolderIcon, 
@@ -23,7 +23,7 @@ export default function TaskFiltersDom() {
   allTasksDiv.appendChild(folderIcon)
 
   // Create all tasks button and append to all tasks div
-  const allTasksButton = CreateElement({
+  const allTasksButton = createElement({
     element: 'button',
     className: 'filterButton',
     domText: 'All tasks'
@@ -31,11 +31,11 @@ export default function TaskFiltersDom() {
   allTasksDiv.appendChild(allTasksButton)
 
   // Create div for second filter icon & button and append to main filters div
-  const dayTasksDiv = CreateElement({element: 'div', className: 'filter'})
+  const dayTasksDiv = createElement({element: 'div', className: 'filter'})
   mainFilterDiv.appendChild(dayTasksDiv)
 
   // Create day icon and append to all tasks div
-  const dueTodayIcon = CreateElement({
+  const dueTodayIcon = createElement({
       element: 'img', 
       className:'filterIcon', 
       domSrc: DayIcon, 
@@ -44,7 +44,7 @@ export default function TaskFiltersDom() {
   dayTasksDiv.appendChild(dueTodayIcon)
 
   // Create due today button and append to all tasks div
-  const dayTasksButton = CreateElement({
+  const dayTasksButton = createElement({
     element: 'button',
     className: 'filterButton',
     domText: 'Due today'
@@ -52,11 +52,11 @@ export default function TaskFiltersDom() {
   dayTasksDiv.appendChild(dayTasksButton)
 
   // Create div for third filter icon & button and append to main filters div
-  const weekTasksDiv = CreateElement({element: 'div', className: 'filter'})
+  const weekTasksDiv = createElement({element: 'div', className: 'filter'})
   mainFilterDiv.appendChild(weekTasksDiv)
 
   // Create due this week icon and append to all tasks div
-  const dueWeekIcon = CreateElement({
+  const dueWeekIcon = createElement({
       element: 'img', 
       className:'filterIcon', 
       domSrc: WeekIcon, 
@@ -65,7 +65,7 @@ export default function TaskFiltersDom() {
   weekTasksDiv.appendChild(dueWeekIcon)
 
   // Create due this week button and append to all tasks div
-  const dueWeekButton = CreateElement({
+  const dueWeekButton = createElement({
     element: 'button',
     className: 'filterButton',
     domText: 'Due this week'
