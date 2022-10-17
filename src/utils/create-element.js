@@ -7,7 +7,10 @@ export default function createElement(
   domText = undefined,
   domSrc = undefined,
   domAlt = undefined,
-  domHref = undefined
+  domHref = undefined,
+  domType = undefined,
+  domName = undefined,
+  domValue = undefined,
   })
   {
   // Create new dom element
@@ -36,6 +39,18 @@ export default function createElement(
   
   if (typeof domHref != "undefined") {
     elementCreated.href = domHref
+  }
+
+  if (typeof domType != "undefined") {
+    elementCreated.type = domType
+  }
+
+  if (typeof domName != "undefined") {
+    elementCreated.name = domName
+  }
+
+  if (typeof domValue != "undefined") {
+    elementCreated.value = domValue
   }
   
   return elementCreated
