@@ -4,6 +4,7 @@ import TaskFiltersDom from './task-filter-dom'
 import ProjectsListDom from './project-list-dom'
 import NoTasks from './no-task-dom'
 import NewTaskDom from './task-button-dom'
+import FormDom from './form-dom'
 import '../styles/layout-styles.css'
 
 // Functions purpose: Initially append page DOM elements
@@ -43,5 +44,6 @@ export default function initialPageLayout() {
 
   // Render to right column div the new task icon and button
   rightColumnDiv.appendChild(NoTasks())
+  rightColumnDiv.appendChild(FormDom())
   rightColumnDiv.appendChild(NewTaskDom())
 }

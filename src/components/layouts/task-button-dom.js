@@ -16,7 +16,12 @@ export default function NewTaskDom() {
   newTaskDiv.appendChild(newTaskIcon)
   
   // Create new task button and append to div for all new tasks
-  const newTaskButton = createElement({element: 'button', className: 'newTaskButton', domText: 'Add task'})
+  const newTaskButton = createElement({
+    element: 'button', 
+    className: 'newTaskButton',
+    domId: 'newTask', 
+    domText: 'Add task'
+  })
   newTaskDiv.appendChild(newTaskButton)
   
   // Return new task div with appended elements
