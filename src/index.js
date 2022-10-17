@@ -1,4 +1,4 @@
 import './global-style.css';
-import InitialPageLayout from "./components/initial-page-layout";
+import initialPageLayout from "./components/layouts/initial-page-layout";
 
-InitialPageLayout()
+initialPageLayout()

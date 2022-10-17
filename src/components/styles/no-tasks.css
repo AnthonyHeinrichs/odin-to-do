@@ -1,0 +1,9 @@
+.noTasks {
+  font-family: 'Roboto', sans-serif;
+  font-style: italic;
+  margin-left: 48px;
+  background: #EFEFEF;
+  width: 65vw;
+  height: 40px;
+  border-radius: 5px;
+}
