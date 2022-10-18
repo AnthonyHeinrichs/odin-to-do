@@ -81,5 +81,7 @@ export default function FormDom() {
   })
   buttonDiv.appendChild(cancelButton)
 
+  formDiv.classList.add('hidden')
+
   return formDiv
 }
