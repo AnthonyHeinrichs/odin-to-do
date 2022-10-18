@@ -1,0 +1,23 @@
+.taskLabels {
+  display: flex;
+  justify-content: start;
+  margin-left: 48px;
+}
+
+.nameLabel, .descriptionLabel, .priorityLabel, .dueDateLabel {
+  font-weight: 700;
+  font-size: 18px;
+  color: #0E0080;
+}
+
+.descriptionLabel {
+  margin-left: 250px;
+}
+
+.priorityLabel {
+  margin-left: 400px;
+}
+
+.dueDateLabel {
+  margin-left: 200px;
+}
