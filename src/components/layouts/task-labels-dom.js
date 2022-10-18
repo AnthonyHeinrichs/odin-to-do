@@ -36,5 +36,7 @@ export default function TaskLabels() {
   })
   taskLabelsDiv.appendChild(taskDueDate)
 
+  taskLabelsDiv.classList.add('hidden')
+
   return taskLabelsDiv
 }
