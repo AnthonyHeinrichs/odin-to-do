@@ -1,9 +1,14 @@
-.noTasks {
-  font-family: 'Roboto', sans-serif;
-  font-style: italic;
-  margin-left: 48px;
+.noTaskContainer {
   background: #EFEFEF;
   width: 65vw;
   height: 40px;
+  margin-left: 48px;
+  margin-top: 48px;
   border-radius: 5px;
+}
+
+.noTaskText {
+  font-family: 'Roboto', sans-serif;
+  font-style: italic;
+  padding: 8px;
 }
