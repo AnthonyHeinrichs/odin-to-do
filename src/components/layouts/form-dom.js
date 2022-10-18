@@ -1,4 +1,5 @@
 import createElement from "../../utils/create-element";
+import '../styles/form-styles.css'
 
 export default function FormDom() {
   const formDiv = createElement({element: 'div', className:'newTaskForm'})
@@ -7,13 +8,16 @@ export default function FormDom() {
   const form = createElement({element: 'form'})
   formDiv.appendChild(form)
 
+  const inputDiv = createElement({element: 'div', className: 'inputs'})
+  form.appendChild(inputDiv)
+
   const newTaskName = createElement({
     element: 'input', 
     domType:'text',
     domId: 'taskName',
     domName: 'taskName',
   })
-  form.appendChild(newTaskName)
+  inputDiv.appendChild(newTaskName)
 
   const newTaskDescription = createElement({
     element: 'input', 
@@ -21,7 +25,7 @@ export default function FormDom() {
     domId: 'taskDescription',
     domName: 'taskDescription',
   })
-  form.appendChild(newTaskDescription)
+  inputDiv.appendChild(newTaskDescription)
 
   const newTaskPriority = createElement({
     element: 'select', 
@@ -49,15 +53,33 @@ export default function FormDom() {
     domText: 'High'
   })
   newTaskPriority.appendChild(highPriority)
-
-  form.appendChild(newTaskPriority)
+  inputDiv.appendChild(newTaskPriority)
 
   const dueDate = createElement({
     element: 'input',
+    domId: 'dueDate',
     domType: 'date'
   })
+  inputDiv.appendChild(dueDate)
 
-  form.appendChild(dueDate)
+  const buttonDiv = createElement({element: 'div', className: 'formButtons'})
+  form.appendChild(buttonDiv)
+
+  const saveButton = createElement({
+    element: 'input',
+    className: 'saveButton',
+    domType: 'submit',
+    domValue: 'Save'
+  })
+  buttonDiv.appendChild(saveButton)
+
+  const cancelButton = createElement({
+    element: 'button',
+    className: 'cancelButton',
+    domType: 'button',
+    domText: 'Cancel'
+  })
+  buttonDiv.appendChild(cancelButton)
 
   return formDiv
 }
