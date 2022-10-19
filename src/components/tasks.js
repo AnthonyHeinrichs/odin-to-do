@@ -22,8 +22,17 @@ export default function createTasks() {
     let due = e.target.elements.dueDate.value
   
     let createdTask = task(name, description, priority, due)
-    
+
     tasks.push(createdTask)
-    console.log(tasks)
+    
+    e.target.reset()
+    newTaskDiv.classList.add('hidden')
+    showTasks()
   })
+
+  const showTasks = () => {
+    for (let i = 0; i < tasks.length; i++) {
+     console.log(tasks[i])
+    }
+  }
 }
