@@ -77,7 +77,8 @@ export default function FormDom() {
     element: 'button',
     className: 'cancelButton',
     domType: 'button',
-    domText: 'Cancel'
+    domText: 'Cancel',
+    domId: 'cancelBtn'
   })
   buttonDiv.appendChild(cancelButton)
 
