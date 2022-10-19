@@ -47,7 +47,7 @@ export default function initialPageLayout() {
   // Render to right column div the new task icon and button
   headerDiv.appendChild(FilterTitle())
   rightColumnDiv.appendChild(TaskLabels())
-  rightColumnDiv.appendChild(NoTasks())
   rightColumnDiv.appendChild(FormDom())
+  rightColumnDiv.appendChild(NoTasks())
   rightColumnDiv.appendChild(NewTaskDom())
 }

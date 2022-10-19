@@ -4,7 +4,8 @@ import '../styles/no-tasks.css'
 export default function NoTasks() {
   const noTaskDiv = createElement({
     element: 'div',
-    className: 'noTaskContainer'
+    className: 'noTaskContainer',
+    domId: 'noTask'
   })
 
   const noTasks = createElement({

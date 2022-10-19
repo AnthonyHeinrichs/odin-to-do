@@ -1,20 +1,30 @@
 .taskForm {
-  background: #EFEFEF;
   margin-left: 48px;
+  margin-top: 24px;
+  padding: 8px;
   width: 65vw;
   height: 80px;
 }
 
 #taskName {
-  margin-left: 12px;
+  margin-left: 6px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: solid #5A49E3;
 }
 
 #taskDescription {
-  margin-left: 120px;
+  margin-left: 112px;
+  width: 300px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: solid #5A49E3;
 }
 
 #priority {
-  margin-left: 320px;
+  margin-left: 200px;
 }
 
 #dueDate {
@@ -24,8 +34,7 @@
 .formButtons {
   display: flex;
   justify-content: end;
-  margin-right: 52px;
-  margin-top: 16px;
+  margin-top: 24px;
 }
 
 .saveButton {

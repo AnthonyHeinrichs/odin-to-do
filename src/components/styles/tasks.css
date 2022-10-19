@@ -1,0 +1,30 @@
+.task {
+  display: flex;
+  align-items: center;
+  margin-left: 48px;
+  background: #EFEFEF;
+  width: 65vw;
+  height: 40px;
+  margin-left: 48px;
+  margin-top: 24px;
+  border-radius: 5px;
+}
+
+.name {
+  width: 200px;
+  margin-left: 12px;
+}
+
+.description {
+  width: 300px;
+  margin-left: 95px;
+}
+
+.priority {
+  width: 100px;
+  margin-left: 195px;
+}
+
+.due {
+  margin-left: 165px;
+}
