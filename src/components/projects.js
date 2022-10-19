@@ -1,7 +1,7 @@
 import createElement from "../utils/create-element"
 
 export default function handleProjects() {
-  const projects = ['None']
+  const projects = ['None', 'clothes', 'workout', 'home']
   const projectDropDown = document.getElementById('taskProject')
 
   if (projects.length > 0) {
