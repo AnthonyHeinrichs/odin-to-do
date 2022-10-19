@@ -16,6 +16,7 @@ export default function FormDom() {
     domType:'text',
     domId: 'taskName',
     domName: 'taskName',
+    domPlaceholder: 'Task name...'
   })
   inputDiv.appendChild(newTaskName)
 
@@ -24,6 +25,7 @@ export default function FormDom() {
     domType:'text',
     domId: 'taskDescription',
     domName: 'taskDescription',
+    domPlaceholder: 'Task description...'
   })
   inputDiv.appendChild(newTaskDescription)
 

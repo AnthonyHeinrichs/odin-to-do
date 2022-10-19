@@ -11,6 +11,7 @@ export default function createElement(
   domType = undefined,
   domName = undefined,
   domValue = undefined,
+  domPlaceholder = undefined,
   })
   {
   // Create new dom element
@@ -51,6 +52,10 @@ export default function createElement(
 
   if (typeof domValue != "undefined") {
     elementCreated.value = domValue
+  }
+
+  if (typeof domPlaceholder != "unedefined") {
+    elementCreated.placeholder = domPlaceholder
   }
   
   return elementCreated

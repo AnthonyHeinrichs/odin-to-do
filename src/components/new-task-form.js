@@ -1,4 +1,3 @@
-
 export default function NewTaskForm() {
   const newTaskButton = document.getElementById('newTask')
   const cancelFormButton = document.getElementById('cancelBtn')
