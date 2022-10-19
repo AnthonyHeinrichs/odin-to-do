@@ -19,7 +19,7 @@ export default function NewTaskDom() {
   const newTaskButton = createElement({
     element: 'button', 
     className: 'newTaskButton',
-    domId: 'newTask', 
+    domId: 'newTask',
     domText: 'Add task'
   })
   newTaskDiv.appendChild(newTaskButton)
