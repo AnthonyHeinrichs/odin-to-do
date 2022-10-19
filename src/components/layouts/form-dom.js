@@ -57,6 +57,13 @@ export default function FormDom() {
   newTaskPriority.appendChild(highPriority)
   inputDiv.appendChild(newTaskPriority)
 
+  const newTaskProject = createElement({
+    element: 'select', 
+    domId: 'taskProject',
+    domName: 'project',
+  })
+  inputDiv.appendChild(newTaskProject)
+
   const dueDate = createElement({
     element: 'input',
     domId: 'dueDate',

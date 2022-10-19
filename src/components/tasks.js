@@ -1,11 +1,12 @@
 import createElement from "../utils/create-element"
 import './styles/tasks.css'
 
-export default function createTasks() {
+export default function handleTasks() {
   const tasks = []
 
   const task = (taskName, taskDescription, taskPriority, dueDate) => {
     return {
+      id: tasks.length + 1,
       complete: false,
       name: taskName,
       description: taskDescription,
@@ -32,6 +33,7 @@ export default function createTasks() {
     e.target.reset()
     newTaskDiv.classList.add('hidden')
     addTaskToDom(createdTask)
+    console.log(createdTask)
   })
 
   const formDiv = document.getElementById('formDiv')
