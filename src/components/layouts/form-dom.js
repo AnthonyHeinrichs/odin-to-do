@@ -2,7 +2,7 @@ import createElement from "../../utils/create-element";
 import '../styles/form-styles.css'
 
 export default function FormDom() {
-  const formDiv = createElement({element: 'div', className:'newTaskForm'})
+  const formDiv = createElement({element: 'div', className:'newTaskForm', domId: 'formDiv'})
   // formDiv.classList.add('hidden')
 
   const form = createElement({element: 'form'})

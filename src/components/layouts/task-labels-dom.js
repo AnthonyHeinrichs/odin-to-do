@@ -5,7 +5,8 @@ export default function TaskLabels() {
 
   const taskLabelsDiv = createElement({
     element: 'div',
-    className: 'taskLabels'
+    className: 'taskLabels',
+    domId: 'taskLabelsDiv'
   })
 
   const taskName = createElement({
@@ -35,8 +36,6 @@ export default function TaskLabels() {
     domText: 'Due:'
   })
   taskLabelsDiv.appendChild(taskDueDate)
-
-  taskLabelsDiv.classList.add('hidden')
 
   return taskLabelsDiv
 }

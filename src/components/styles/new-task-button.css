@@ -8,6 +8,7 @@
 .newTaskIcon {
   height: 18px;
   width: 18px;
+  cursor: pointer;
 }
 
 .newTaskButton {
@@ -17,4 +18,5 @@
   font-size: 18px;
   font-weight: 300;
   color: #0E0080;
+  cursor: pointer;
 }
