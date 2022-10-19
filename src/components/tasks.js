@@ -1,15 +1,17 @@
 import createElement from "../utils/create-element"
 import './styles/tasks.css'
 
-export default function createTasks() {
+export default function handleTasks() {
   const tasks = []
 
-  const task = (taskName, taskDescription, taskPriority, dueDate) => {
+  const task = (taskName, taskDescription, taskPriority, taskProject, dueDate) => {
     return {
+      id: tasks.length + 1,
       complete: false,
       name: taskName,
       description: taskDescription,
       priority: taskPriority,
+      project: taskProject,
       due: dueDate
     }
   }
@@ -23,15 +25,17 @@ export default function createTasks() {
     let name = e.target.elements.taskName.value
     let description = e.target.elements.taskDescription.value
     let priority = e.target.elements.priority.value
+    let project = e.target.elements.project.value
     let due = e.target.elements.dueDate.value
   
-    let createdTask = task(name, description, priority, due)
+    let createdTask = task(name, description, priority, project, due)
 
     tasks.push(createdTask)
     
     e.target.reset()
     newTaskDiv.classList.add('hidden')
     addTaskToDom(createdTask)
+    console.log(createdTask)
   })
 
   const formDiv = document.getElementById('formDiv')
@@ -52,6 +56,8 @@ export default function createTasks() {
     taskDiv.appendChild(taskDescription)
     const taskPriority = createElement({element: 'p', className:'priority', domText: tasks[i].priority})
     taskDiv.appendChild(taskPriority)
+    const taskProject = createElement({element: 'p', className:'project', domText: tasks[i].project})
+    taskDiv.appendChild(taskProject)
     const taskDueDate = createElement({element: 'time', className:'due', domText: tasks[i].due})
     taskDiv.appendChild(taskDueDate)
   }
@@ -69,6 +75,8 @@ export default function createTasks() {
     taskDiv.appendChild(taskDescription)
     const taskPriority = createElement({element: 'p', className:'priority', domText: task.priority})
     taskDiv.appendChild(taskPriority)
+    const taskProject = createElement({element: 'p', className:'project', domText: task.project})
+    taskDiv.appendChild(taskProject)
     const taskDueDate = createElement({element: 'time', className:'due', domText: task.due})
     taskDiv.appendChild(taskDueDate)
   }
