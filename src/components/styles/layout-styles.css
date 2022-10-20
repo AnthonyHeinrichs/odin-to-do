@@ -5,12 +5,14 @@
 
 .leftColumn {
   height: 100vh;
+  min-height: 100%;
   width: 20vw;
   background: #EFEFEF;
 }
 
 .rightColumn {
   height: 100vh;
+  min-height: 100%;
   width: 80vw;
   box-shadow: 7px -2px 5px 4px rgba(0,0,0,0.33);
 }

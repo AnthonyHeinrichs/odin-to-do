@@ -1,5 +1,5 @@
 import { tasks } from './tasks'
-import { format } from 'date-fns'
+import { format, isThisWeek, parseISO } from 'date-fns'
 import createElement from '../utils/create-element'
 
 export default function filterTasks() {
@@ -19,7 +19,14 @@ export default function filterTasks() {
     })
     filterTaskList(tasksDueToday)
   })
-  
+
+  const dueThisWeek = document.getElementById('dueThisWeek')
+  dueThisWeek.addEventListener('click', () => {
+    let tasksDueThisWeek = tasks.filter(el => {
+      return isThisWeek(Date.parse(el.due))
+    })
+    filterTaskList(tasksDueThisWeek)
+  })
   
   const filterTaskList = (tasks) => {
     if (tasks.length > 0) {
