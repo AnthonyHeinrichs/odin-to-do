@@ -26,6 +26,7 @@ export default function TaskFiltersDom() {
   const allTasksButton = createElement({
     element: 'button',
     className: 'filterButton',
+    domId: 'allTasks',
     domText: 'All tasks'
   })
   allTasksDiv.appendChild(allTasksButton)
@@ -47,6 +48,7 @@ export default function TaskFiltersDom() {
   const dayTasksButton = createElement({
     element: 'button',
     className: 'filterButton',
+    domId: 'dueToday',
     domText: 'Due today'
   })
   dayTasksDiv.appendChild(dayTasksButton)
@@ -68,6 +70,7 @@ export default function TaskFiltersDom() {
   const dueWeekButton = createElement({
     element: 'button',
     className: 'filterButton',
+    domId: 'dueThisWeek',
     domText: 'Due this week'
   })
   weekTasksDiv.appendChild(dueWeekButton)
