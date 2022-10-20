@@ -1,0 +1,65 @@
+#projectName {
+  margin: 24px 0px 24px 48px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: solid #5A49E3;
+  background: #EFEFEF;
+  font-size: 18px;
+  width: 200px;
+}
+
+.projectFormButtons {
+  margin-left: 48px;
+  margin-bottom: 24px;
+}
+
+.projectsSaveButton {
+  border: none;
+  font-size: 16px;
+  background: #B3F8B1;
+  border-radius: 2px;
+  padding: 6px;
+  width: 80px;
+  margin-right: 24px;
+}
+
+.projectsCancelButton {
+  border: none;
+  font-size: 16px;
+  background: #F9AFAF;
+  border-radius: 2px;
+  padding: 6px;
+  width: 80px;
+}
+
+.createdProjects {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  margin-left: 48px;
+  margin-bottom: 24px;
+}
+
+.singleProject {
+  display: flex;
+  gap: 10px;
+}
+
+.checklistIcon {
+  height: 24px;
+  width: 24px;
+  margin-top: 24px;
+}
+
+.project {
+  border: none;
+  color: #0E0080;
+  font-weight: 500;
+  font-size: 24px;
+  margin-top: 24px;
+}
+
+textarea:focus, input:focus{
+  outline: none;
+}

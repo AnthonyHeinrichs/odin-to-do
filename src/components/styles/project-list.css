@@ -8,11 +8,12 @@
 .newProjectsContainer {
   display: flex;
   gap: 10px;
+  margin-bottom: 48px;
 }
 
 .newProjectIcon {
-  height: 24px;
-  width: 24px;
+  height: 18px;
+  width: 18px;
   margin-left: 48px;
   margin-top: 12px;
   align-self: center;
@@ -21,8 +22,8 @@
 .newProjectButton {
   border: none;
   font-family: 'Roboto', sans-serif;
-  font-weight: 500;
-  font-size: 24px;
+  font-weight: 300;
+  font-size: 18px;
   margin-top: 12px;
   color: #0E0080;
 }
