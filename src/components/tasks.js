@@ -75,7 +75,7 @@ export default function handleTasks() {
     taskDiv.appendChild(taskDescription)
     const taskPriority = createElement({element: 'p', className:'priority', domText: task.priority})
     taskDiv.appendChild(taskPriority)
-    const taskProject = createElement({element: 'p', className:'project', domText: task.project})
+    const taskProject = createElement({element: 'p', className:'projectRef', domText: task.project})
     taskDiv.appendChild(taskProject)
     const taskDueDate = createElement({element: 'time', className:'due', domText: task.due})
     taskDiv.appendChild(taskDueDate)

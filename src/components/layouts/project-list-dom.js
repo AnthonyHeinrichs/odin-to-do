@@ -8,11 +8,11 @@ export default function ProjectsListDom() {
   const projectsList = createElement({element: 'div', className: 'projectsList'})
   
   // Create the projects title element and append to main projects list div
-  const projectsTitle = createElement({element: 'h2', className: 'projectsTitle', domText: 'Projects'})
+  const projectsTitle = createElement({element: 'h2', className: 'projectsTitle', domText: 'Projects', domId:'projectsTitle'})
   projectsList.appendChild(projectsTitle)
   
   // Create the new projects container and append to main projects list div
-  const newProjectsDiv = createElement({element: 'div', className: 'newProjectsContainer'})
+  const newProjectsDiv = createElement({element: 'div', className: 'newProjectsContainer', domId: 'newProjectsContainer'})
   projectsList.appendChild(newProjectsDiv)
   
   // Create the new projects icon and button and append to projects div
@@ -24,7 +24,12 @@ export default function ProjectsListDom() {
     })
   newProjectsDiv.appendChild(newProjectsIcon)
   
-  const newProjectsText = createElement({element: 'button', className: 'newProjectButton', domText: 'Add a project'})
+  const newProjectsText = createElement({
+    element: 'button', 
+    className: 'newProjectButton', 
+    domText: 'Add project', 
+    domId:'newProject'
+  })
   newProjectsDiv.appendChild(newProjectsText)
 
   return projectsList

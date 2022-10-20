@@ -1,12 +1,13 @@
 .taskForm {
   margin-left: 48px;
-  margin-top: 24px;
+  margin-top: 18px;
   padding: 8px;
   width: 65vw;
   height: 80px;
 }
 
 #taskName {
+  font-size: 18px;
   margin-left: 6px;
   border-top: none;
   border-left: none;
@@ -15,7 +16,8 @@
 }
 
 #taskDescription {
-  margin-left: 112px;
+  font-size: 18px;
+  margin-left: 55px;
   width: 300px;
   border-top: none;
   border-left: none;
@@ -24,17 +26,24 @@
 }
 
 #priority {
-  margin-left: 200px;
+  font-size: 18px;
+  margin-left: 80px;
+}
+
+#taskProject {
+  font-size: 18px;
+  margin-left: 80px;
 }
 
 #dueDate {
-  margin-left: 195px;
+  font-size: 18px;
+  margin-left: 60px;
 }
 
 .formButtons {
   display: flex;
   justify-content: end;
-  margin-top: 24px;
+  margin-top: 18px;
 }
 
 .saveButton {
@@ -54,4 +63,8 @@
   border-radius: 2px;
   padding: 6px;
   width: 80px;
+}
+
+textarea:focus, input:focus{
+  outline: none;
 }
