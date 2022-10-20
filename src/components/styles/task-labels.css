@@ -5,7 +5,11 @@
   margin-top: 48px;
 }
 
-.nameLabel, .descriptionLabel, .priorityLabel, .dueDateLabel {
+.nameLabel, 
+.descriptionLabel, 
+.priorityLabel, 
+.dueDateLabel,
+.projectLabel {
   font-weight: 700;
   font-size: 18px;
   color: #0E0080;
@@ -16,7 +20,11 @@
 }
 
 .priorityLabel {
-  margin-left: 400px;
+  margin-left: 300px;
+}
+
+.projectLabel {
+  margin-left: 80px;
 }
 
 .dueDateLabel {

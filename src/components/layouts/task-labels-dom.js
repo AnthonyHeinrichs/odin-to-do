@@ -30,6 +30,13 @@ export default function TaskLabels() {
   })
   taskLabelsDiv.appendChild(taskPriority)
 
+  const taskProject = createElement({
+    element: 'p', 
+    className: 'projectLabel', 
+    domText: 'Project:'
+  })
+  taskLabelsDiv.appendChild(taskProject)
+
   const taskDueDate = createElement({
     element: 'p', 
     className: 'dueDateLabel', 
