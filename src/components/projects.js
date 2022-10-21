@@ -1,5 +1,6 @@
 import createElement from "../utils/create-element"
 import checklistIcon from '../assets/checklist.png'
+import { filterByProject } from "./filter-tasks"
 import './styles/projects.css'
 
 export default function handleProjects() {
@@ -68,7 +69,7 @@ export default function handleProjects() {
     projectForm.classList.add('hidden')
   })
 
-  const projectListDiv = createElement({element: 'div', className: 'createdProjects'})
+  const projectListDiv = createElement({element: 'div', className: 'createdProjects', domId: 'createdProjects'})
   projectForm.insertAdjacentElement('beforebegin', projectListDiv)
 
   const addProjectToProjectList = (name) => {
@@ -82,10 +83,13 @@ export default function handleProjects() {
     singleProjectDiv.appendChild(projectIcon)
     singleProjectDiv.appendChild(project)
     projectListDiv.appendChild(singleProjectDiv)
+    project.addEventListener('click', () => {
+      filterByProject(project.innerHTML)
+    }) 
   }
 
   const addProjectToTaskForm = (name) => {
     const project = createElement({element: 'option', domValue: name, domText: name})
-    projectDropDown.appendChild(project) 
+    projectDropDown.appendChild(project)
   }
 }
