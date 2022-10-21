@@ -4,9 +4,10 @@ import './components/styles/tasks.css'
 import initialPageLayout from "./components/layouts/initial-page-layout";
 import NewTaskForm from './components/new-task-form'
 import filterTasks from './components/filter-tasks'
-import updateFilterDom from './components/layouts/update-filter-dom'
+import updateFilterDom from './components/update-filter-dom'
 import createElement from './utils/create-element'
 import checklistIcon from './assets/checklist.png'
+import { v4 as uniqueId, v4 } from 'uuid'
 
 initialPageLayout()
 NewTaskForm()
@@ -18,7 +19,7 @@ const tasks = []
 
 const task = (taskName, taskDescription, taskPriority, taskProject, dueDate) => {
   return {
-    id: tasks.length + 1,
+    id: uniqueId(),
     complete: false,
     name: taskName,
     description: taskDescription,
@@ -44,7 +45,7 @@ newTask.addEventListener('submit', e => {
   let due = e.target.elements.dueDate.value
 
   let createdTask = task(name, description, priority, project, due)
-
+  console.log(createdTask)
   tasks.push(createdTask)
   
   e.target.reset()
