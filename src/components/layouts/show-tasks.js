@@ -14,23 +14,34 @@ export default function showTasks(tasks) {
   for (let i = 0; i < tasks.length; i++) {
     const taskDiv = createElement({element: 'div', className: 'task'})
     formDiv.insertAdjacentElement('beforebegin', taskDiv)
+    const taskDetailsDiv = createElement({element: 'div', className: 'taskDetails'})
+    taskDiv.appendChild(taskDetailsDiv)
+
     const taskCheckbox = createElement({element: 'input', domType: 'checkbox', domName: 'complete'})
     if (tasks[i].complete) {
       taskCheckbox.setAttribute('checked', 'checked')
     } else {
       taskCheckbox.removeAttribute('checked')
     }
-    taskDiv.appendChild(taskCheckbox)
+    taskDetailsDiv.appendChild(taskCheckbox)
+
     const taskName = createElement({element: 'p', className: 'name', domText: tasks[i].name})
-    taskDiv.appendChild(taskName)
+    taskDetailsDiv.appendChild(taskName)
     const taskDescription = createElement({element: 'p', className: 'description', domText: tasks[i].description})
-    taskDiv.appendChild(taskDescription)
+    taskDetailsDiv.appendChild(taskDescription)
     const taskPriority = createElement({element: 'p', className:'priority', domText: tasks[i].priority})
-    taskDiv.appendChild(taskPriority)
+    taskDetailsDiv.appendChild(taskPriority)
     const taskProject = createElement({element: 'p', className:'projectRef', domText: tasks[i].project})
-    taskDiv.appendChild(taskProject)
+    taskDetailsDiv.appendChild(taskProject)
     const taskDueDate = createElement({element: 'time', className:'due', domText: tasks[i].due})
-    taskDiv.appendChild(taskDueDate)
+    taskDetailsDiv.appendChild(taskDueDate)
+
+    const btnDiv = createElement({element:'div', className:'taskBtnDiv'})
+    taskDiv.appendChild(btnDiv)
+    const taskUpdateBtn = createElement({element: 'button', className:'updateBtn', domText: 'Update'})
+    btnDiv.classList.add('hidden')
+    btnDiv.appendChild(taskUpdateBtn)
+
 
     taskCheckbox.addEventListener('change', () => {
       if (taskCheckbox.checked) {
@@ -39,6 +50,16 @@ export default function showTasks(tasks) {
       } else {
         tasks[i].complete = false
         taskCheckbox.setAttribute('checked', 'unchecked')
+      }
+    })
+
+    taskName.addEventListener('click', () => {
+      if (taskDiv.classList.contains('taskExpanded')) {
+        taskDiv.classList.remove('taskExpanded')
+        btnDiv.classList.add('hidden')
+      } else {
+        taskDiv.classList.add('taskExpanded')
+        btnDiv.classList.remove('hidden')
       }
     })
   }

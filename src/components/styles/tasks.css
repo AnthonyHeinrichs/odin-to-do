@@ -1,13 +1,36 @@
 .task {
-  display: flex;
-  align-items: center;
   margin-left: 48px;
   background: #EFEFEF;
   width: 65vw;
-  height: 40px;
+  height: 60px;
   margin-left: 48px;
   margin-top: 24px;
   border-radius: 5px;
+}
+
+.taskExpanded {
+  height: 120px;
+}
+
+.taskBtnDiv {
+  display: flex;
+  justify-content: end;
+  align-items: end;
+  position: relative;
+  bottom: 30px;
+  left: 0;
+  right: 0;
+}
+
+.updateBtn {
+  margin-right: 12px;
+  margin-bottom: 12px;
+}
+
+.taskDetails {
+  display: flex;
+  align-items: center;
+  height: 100%;
 }
 
 .name {
