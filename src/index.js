@@ -81,6 +81,7 @@ completeTasks.addEventListener('click', () => {
   filterTasks(tasks, currentPage)
 })
 
+export { tasks }
 // Projects
 
 const projects = ['No project']
