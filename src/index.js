@@ -4,6 +4,7 @@ import './components/styles/tasks.css'
 import initialPageLayout from "./components/layouts/initial-page-layout";
 import NewTaskForm from './components/new-task-form'
 import filterTasks from './components/filter-tasks'
+import updateFilterDom from './components/layouts/update-filter-dom'
 import createElement from './utils/create-element'
 import checklistIcon from './assets/checklist.png'
 
@@ -28,6 +29,7 @@ const task = (taskName, taskDescription, taskPriority, taskProject, dueDate) => 
 }
 
 filterTasks(tasks, 'main')
+updateFilterDom(currentPage)
 
 const newTask = document.getElementById('newTaskForm')
 const newTaskDiv = document.getElementById('formDiv')
@@ -53,18 +55,21 @@ newTask.addEventListener('submit', e => {
 const allTasks = document.getElementById('allTasks')
 allTasks.addEventListener('click', () => {
   currentPage = 'main'
+  updateFilterDom(currentPage)
   filterTasks(tasks, currentPage)
 })
 
 const dueToday = document.getElementById('dueToday')
 dueToday.addEventListener('click', () => {
   currentPage = 'due today'
+  updateFilterDom(currentPage)
   filterTasks(tasks, currentPage)
 })
 
 const dueThisWeek = document.getElementById('dueThisWeek')
 dueThisWeek.addEventListener('click', () => {
   currentPage = 'due this week'
+  updateFilterDom(currentPage)
   filterTasks(tasks, currentPage)
 })
 
@@ -153,6 +158,7 @@ const addProjectToProjectList = (name) => {
   project.addEventListener('click', () => {
     currentPage = project.innerHTML
     filterTasks(tasks, currentPage)
+    updateFilterDom(currentPage)
     options.value = currentPage
   }) 
 }
