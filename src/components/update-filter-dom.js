@@ -13,6 +13,9 @@ export default function updateFilterDom(page) {
   } else if (page === 'due this week') {
     title.innerHTML = 'Due this week'
     description.innerHTML = 'Here are your tasks due this week'
+  } else if (page === 'complete') {
+    title.innerHTML = 'Completed tasks'
+    description.innerHTML = 'Here are your completed tasks' 
   } else {
     title.innerHTML = page
     description.innerHTML = `Here are your tasks for the ${page} project`
