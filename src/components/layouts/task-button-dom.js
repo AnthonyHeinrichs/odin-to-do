@@ -4,7 +4,7 @@ import PlusIcon from '../../assets/plus.png'
 
 export default function NewTaskDom() {
   // Create new div for all new tasks
-  const newTaskDiv = createElement({element: 'div', className: 'newTask'})
+  const newTaskDiv = createElement({element: 'div', className: 'newTask', domId: 'newTaskDiv'})
   
   // Create new icon img and append to div for all new tasks
   const newTaskIcon = createElement({
