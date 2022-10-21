@@ -3,11 +3,15 @@ import '../styles/task-filters.css'
 import FolderIcon from '../../assets/folder.png'
 import DayIcon from '../../assets/calendar-checkmark.png'
 import WeekIcon from '../../assets/full-calendar.png'
+import CompletedIcon from '../../assets/complete.png'
 
 // Functions purpose: Create dom elements for task buttons
 export default function TaskFiltersDom() {
   // Create main div for filters
   const mainFilterDiv = createElement({element: 'div', className: 'allFilters'})
+
+  const filterTitle = createElement({element: 'h2', className: 'filterTitle', domText: 'Filters'})
+  mainFilterDiv.appendChild(filterTitle)
 
   // Create div for first filter icon & button and append to main filters div
   const allTasksDiv = createElement({element: 'div', className: 'filter'})
@@ -74,6 +78,26 @@ export default function TaskFiltersDom() {
     domText: 'Due this week'
   })
   weekTasksDiv.appendChild(dueWeekButton)
+
+
+  const completedTasksDiv = createElement({element: 'div', className: 'filter'})
+  mainFilterDiv.appendChild(completedTasksDiv)
+
+  const completedIcon = createElement({
+    element: 'img', 
+    className:'filterIcon', 
+    domSrc: CompletedIcon, 
+    domAlt: 'Trash bag'
+  })
+completedTasksDiv.appendChild(completedIcon)
+
+  const completedButton = createElement({
+    element: 'button',
+    className: 'filterButton',
+    domId: 'completedTasksFilter',
+    domText: 'Complete'
+  })
+  completedTasksDiv.appendChild(completedButton)
 
   // return the main div so it can be added to main page layout
   return mainFilterDiv

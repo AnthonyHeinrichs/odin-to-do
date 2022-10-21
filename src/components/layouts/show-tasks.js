@@ -14,6 +14,13 @@ export default function showTasks(tasks) {
   for (let i = 0; i < tasks.length; i++) {
     const taskDiv = createElement({element: 'div', className: 'task'})
     formDiv.insertAdjacentElement('beforebegin', taskDiv)
+    const taskCheckbox = createElement({element: 'input', domType: 'checkbox', domName: 'complete'})
+    if (tasks[i].complete) {
+      taskCheckbox.setAttribute('checked', 'checked')
+    } else {
+      taskCheckbox.removeAttribute('checked')
+    }
+    taskDiv.appendChild(taskCheckbox)
     const taskName = createElement({element: 'p', className: 'name', domText: tasks[i].name})
     taskDiv.appendChild(taskName)
     const taskDescription = createElement({element: 'p', className: 'description', domText: tasks[i].description})
@@ -24,5 +31,15 @@ export default function showTasks(tasks) {
     taskDiv.appendChild(taskProject)
     const taskDueDate = createElement({element: 'time', className:'due', domText: tasks[i].due})
     taskDiv.appendChild(taskDueDate)
+
+    taskCheckbox.addEventListener('change', () => {
+      if (taskCheckbox.checked) {
+        tasks[i].complete = true
+        taskCheckbox.setAttribute('checked', 'checked')
+      } else {
+        tasks[i].complete = false
+        taskCheckbox.setAttribute('checked', 'unchecked')
+      }
+    })
   }
 }

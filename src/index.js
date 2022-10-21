@@ -17,9 +17,9 @@ NewTaskForm()
 let currentPage = 'main'
 const tasks = []
 
-const task = (taskName, taskDescription, taskPriority, taskProject, dueDate) => {
+const task = (taskId, taskName, taskDescription, taskPriority, taskProject, dueDate) => {
   return {
-    id: uniqueId(),
+    id: taskId,
     complete: false,
     name: taskName,
     description: taskDescription,
@@ -37,15 +37,15 @@ const newTaskDiv = document.getElementById('formDiv')
   
 newTask.addEventListener('submit', e => {
   e.preventDefault()
- 
+
+  let id = uniqueId()
   let name = e.target.elements.taskName.value
   let description = e.target.elements.taskDescription.value
   let priority = e.target.elements.priority.value
   let project = e.target.elements.project.value
   let due = e.target.elements.dueDate.value
 
-  let createdTask = task(name, description, priority, project, due)
-  console.log(createdTask)
+  let createdTask = task(id, name, description, priority, project, due)
   tasks.push(createdTask)
   
   e.target.reset()
@@ -73,6 +73,14 @@ dueThisWeek.addEventListener('click', () => {
   updateFilterDom(currentPage)
   filterTasks(tasks, currentPage)
 })
+
+const completeTasks = document.getElementById('completedTasksFilter')
+completeTasks.addEventListener('click', () => {
+  currentPage = 'complete'
+  updateFilterDom(currentPage)
+  filterTasks(tasks, currentPage)
+})
+  
 
 // Projects
 
