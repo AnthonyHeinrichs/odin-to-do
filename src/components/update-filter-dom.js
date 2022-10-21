@@ -2,7 +2,6 @@
 export default function updateFilterDom(page) {
   const title = document.getElementById('filterTitle')
   const description = document.getElementById('filterDescription')
-  console.log(page)
 
   // Update filter title in right header depending on selected page
   if (page === 'main') {
