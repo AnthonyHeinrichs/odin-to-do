@@ -1,4 +1,4 @@
-import createElement from "../utils/create-element"
+import showTasks from "./layouts/show-tasks"
 import './styles/tasks.css'
 
 const tasks = []
@@ -35,51 +35,9 @@ export default function handleTasks() {
     
     e.target.reset()
     newTaskDiv.classList.add('hidden')
-    addTaskToDom(createdTask)
+    showTasks(tasks)
   })
-
-  const formDiv = document.getElementById('formDiv')
-
-  const noTask = document.getElementById('noTask')
-
-  // Load existing tasks and hide no task div
-  if (tasks.length > 0) {
-    noTask.classList.add('hidden')
-  }
-
-  for (let i = 0; i < tasks.length; i++) {
-    const taskDiv = createElement({element: 'div', className: 'task'})
-    formDiv.insertAdjacentElement('beforebegin', taskDiv)
-    const taskName = createElement({element: 'p', className: 'name', domText: tasks[i].name})
-    taskDiv.appendChild(taskName)
-    const taskDescription = createElement({element: 'p', className: 'description', domText: tasks[i].description})
-    taskDiv.appendChild(taskDescription)
-    const taskPriority = createElement({element: 'p', className:'priority', domText: tasks[i].priority})
-    taskDiv.appendChild(taskPriority)
-    const taskProject = createElement({element: 'p', className:'project', domText: tasks[i].project})
-    taskDiv.appendChild(taskProject)
-    const taskDueDate = createElement({element: 'time', className:'due', domText: tasks[i].due})
-    taskDiv.appendChild(taskDueDate)
-  }
-  
-
-  const addTaskToDom = (task) => {
-    if (!(noTask.classList.contains('hidden'))){
-      noTask.classList.add('hidden')
-    }
-    const taskDiv = createElement({element: 'div', className: 'task'})
-    formDiv.insertAdjacentElement('beforebegin', taskDiv)
-    const taskName = createElement({element: 'p', className: 'name', domText: task.name})
-    taskDiv.appendChild(taskName)
-    const taskDescription = createElement({element: 'p', className: 'description', domText: task.description})
-    taskDiv.appendChild(taskDescription)
-    const taskPriority = createElement({element: 'p', className:'priority', domText: task.priority})
-    taskDiv.appendChild(taskPriority)
-    const taskProject = createElement({element: 'p', className:'projectRef', domText: task.project})
-    taskDiv.appendChild(taskProject)
-    const taskDueDate = createElement({element: 'time', className:'due', domText: task.due})
-    taskDiv.appendChild(taskDueDate)
-  }
+  showTasks(tasks)
 }
 
 export { tasks }
