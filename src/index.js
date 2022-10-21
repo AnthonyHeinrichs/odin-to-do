@@ -80,7 +80,6 @@ completeTasks.addEventListener('click', () => {
   updateFilterDom(currentPage)
   filterTasks(tasks, currentPage)
 })
-  
 
 // Projects
 
