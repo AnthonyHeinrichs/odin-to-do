@@ -1,38 +1,26 @@
-import { tasks } from './tasks'
 import { format, isThisWeek } from 'date-fns'
 import showTasks from "./layouts/show-tasks"
-import createElement from '../utils/create-element'
 
-export default function filterTasks() {
+export default function filterTasks(tasks, page) {
   const dateToday = format(Date.now(), 'yyyy-MM-dd')
 
   // Show all tasks
-  const allTasks = document.getElementById('allTasks')
-  allTasks.addEventListener('click', () => {
+  if (page === 'main') {
     showTasks(tasks)
-  })
-
-  // Show only tasks due today
-  const dueToday = document.getElementById('dueToday')
-  dueToday.addEventListener('click', () => {
+  } else if (page === 'due today') {
     let tasksDueToday = tasks.filter(el => {
       return el.due == dateToday
     })
     showTasks(tasksDueToday)
-  })
-
-  const dueThisWeek = document.getElementById('dueThisWeek')
-  dueThisWeek.addEventListener('click', () => {
+  } else if (page === 'due this week') {
     let tasksDueThisWeek = tasks.filter(el => {
       return isThisWeek(Date.parse(el.due))
     })
     showTasks(tasksDueThisWeek)
-  })
-}
-
-export const filterByProject = (projectName) => {
-  let tasksByProject = tasks.filter(el => {
-    return el.project === projectName
-  })
-  showTasks(tasksByProject)
+  } else {
+    let tasksByProject = tasks.filter(el => {
+      return el.project === page
+    })
+    showTasks(tasksByProject)
+  }
 }
