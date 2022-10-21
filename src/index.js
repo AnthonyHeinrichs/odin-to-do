@@ -7,7 +7,7 @@ import filterTasks from './components/filter-tasks'
 import updateFilterDom from './components/update-filter-dom'
 import createElement from './utils/create-element'
 import checklistIcon from './assets/checklist.png'
-import { v4 as uniqueId, v4 } from 'uuid'
+import { v4 as uniqueId } from 'uuid'
 
 initialPageLayout()
 NewTaskForm()
