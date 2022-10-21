@@ -13,6 +13,7 @@
   border-left: none;
   border-right: none;
   border-bottom: solid #5A49E3;
+  background: transparent;
 }
 
 #taskDescription {
@@ -23,21 +24,25 @@
   border-left: none;
   border-right: none;
   border-bottom: solid #5A49E3;
+  background: transparent;
 }
 
 #priority {
   font-size: 18px;
   margin-left: 80px;
+  background: transparent;
 }
 
 #taskProject {
   font-size: 18px;
   margin-left: 80px;
+  background: transparent;
 }
 
 #dueDate {
   font-size: 18px;
   margin-left: 60px;
+  background: transparent;
 }
 
 .formButtons {
