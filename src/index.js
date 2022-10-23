@@ -12,10 +12,12 @@ import { v4 as uniqueId } from 'uuid'
 initialPageLayout()
 NewTaskForm()
 
+const tasks = []
+const projects = ['No project']
+
 // Tasks
 
 let currentPage = 'main'
-const tasks = []
 
 const task = (taskId, taskName, taskDescription, taskPriority, taskProject, dueDate) => {
   return {
@@ -29,7 +31,7 @@ const task = (taskId, taskName, taskDescription, taskPriority, taskProject, dueD
   }
 }
 
-filterTasks(tasks, 'main')
+filterTasks(tasks, 'main', projects)
 updateFilterDom(currentPage)
 
 const newTask = document.getElementById('newTaskForm')
@@ -50,41 +52,39 @@ newTask.addEventListener('submit', e => {
   
   e.target.reset()
   newTaskDiv.classList.add('hidden')
-  filterTasks(tasks, currentPage)
+  filterTasks(tasks, currentPage, projects)
 })
 
 const allTasks = document.getElementById('allTasks')
 allTasks.addEventListener('click', () => {
   currentPage = 'main'
   updateFilterDom(currentPage)
-  filterTasks(tasks, currentPage)
+  filterTasks(tasks, currentPage, projects)
 })
 
 const dueToday = document.getElementById('dueToday')
 dueToday.addEventListener('click', () => {
   currentPage = 'due today'
   updateFilterDom(currentPage)
-  filterTasks(tasks, currentPage)
+  filterTasks(tasks, currentPage, projects)
 })
 
 const dueThisWeek = document.getElementById('dueThisWeek')
 dueThisWeek.addEventListener('click', () => {
   currentPage = 'due this week'
   updateFilterDom(currentPage)
-  filterTasks(tasks, currentPage)
+  filterTasks(tasks, currentPage, projects)
 })
 
 const completeTasks = document.getElementById('completedTasksFilter')
 completeTasks.addEventListener('click', () => {
   currentPage = 'complete'
   updateFilterDom(currentPage)
-  filterTasks(tasks, currentPage)
+  filterTasks(tasks, currentPage, projects)
 })
 
 export { tasks }
 // Projects
-
-const projects = ['No project']
 
 const projectDropDown = document.getElementById('taskProject')
 
@@ -166,7 +166,7 @@ const addProjectToProjectList = (name) => {
   projectListDiv.appendChild(singleProjectDiv)
   project.addEventListener('click', () => {
     currentPage = project.innerHTML
-    filterTasks(tasks, currentPage)
+    filterTasks(tasks, currentPage, projects)
     updateFilterDom(currentPage)
     options.value = currentPage
   }) 

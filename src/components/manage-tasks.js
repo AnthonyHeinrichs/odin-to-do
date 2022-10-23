@@ -1,7 +1,7 @@
 import createElement from "../utils/create-element";
 import { tasks } from '../index'
 
-export default function manageTasks(passedTasks) {
+export default function manageTasks(passedTasks, passedProjects) {
   const formDiv = document.getElementById('formDiv')
 
   const noTask = document.getElementById('noTask')
@@ -137,6 +137,31 @@ export default function manageTasks(passedTasks) {
       priority.appendChild(highPriority)
       updateDiv.appendChild(priority)
 
+      const project = createElement({
+        element: 'select', 
+        domId: 'taskProject',
+        domName: 'project',
+      })
+      updateDiv.appendChild(project)
+
+      for (let i = 0; i < passedProjects.length; i++) {
+        let projectOption = createElement
+        ({
+          element: 'option', 
+          domValue: passedProjects[i], 
+          domText: passedProjects[i]
+        })
+        project.appendChild(projectOption)
+      }
+      
+      const due = createElement({
+        element: 'input',
+        domId: 'dueDate',
+        domType: 'date',
+        domValue: passedTasks[i].due
+      })
+      updateDiv.appendChild(due)
+
       const save = createElement({
         element: 'button', 
         domType: 'submit',
@@ -152,9 +177,13 @@ export default function manageTasks(passedTasks) {
         passedTasks[taskIndexToUpdate].name = name.value
         passedTasks[taskIndexToUpdate].description = description.value
         passedTasks[taskIndexToUpdate].priority = priority.value
+        passedTasks[taskIndexToUpdate].project = project.value
+        passedTasks[taskIndexToUpdate].due = due.value
         taskName.innerHTML = name.value
         taskDescription.innerHTML = description.value
         taskPriority.innerHTML = priority.value
+        taskProject.innerHTML = project.value
+        taskDueDate.innerHTML = due.value
         updateDiv.classList.add('hidden')
         taskUpdateBtn.classList.remove('hidden') 
         btnsToRemove.forEach(btn => {
