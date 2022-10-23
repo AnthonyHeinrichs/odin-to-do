@@ -8,6 +8,10 @@
   border-radius: 5px;
 }
 
+.opacTask {
+  opacity: .5;
+}
+
 .taskExpanded {
   height: 120px;
 }

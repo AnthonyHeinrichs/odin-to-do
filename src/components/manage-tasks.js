@@ -50,9 +50,11 @@ export default function manageTasks(passedTasks) {
     taskCheckbox.addEventListener('change', () => {
       if (taskCheckbox.checked) {
         passedTasks[i].complete = true
+        taskDiv.classList.add('hidden')
         taskCheckbox.setAttribute('checked', 'checked')
       } else {
         passedTasks[i].complete = false
+        taskDiv.classList.add('hidden')
         taskCheckbox.setAttribute('checked', 'unchecked')
       }
     })
