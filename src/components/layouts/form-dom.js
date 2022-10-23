@@ -18,6 +18,8 @@ export default function FormDom() {
     domName: 'taskName',
     domPlaceholder: 'Task name...'
   })
+  newTaskName.setAttribute('required', 'required')
+  newTaskName.setAttribute('maxlength', '20')
   inputDiv.appendChild(newTaskName)
 
   const newTaskDescription = createElement({
@@ -27,6 +29,8 @@ export default function FormDom() {
     domName: 'taskDescription',
     domPlaceholder: 'Task description...'
   })
+  newTaskDescription.setAttribute('required', 'required')
+  newTaskDescription.setAttribute('maxlength', '60')
   inputDiv.appendChild(newTaskDescription)
 
   const newTaskPriority = createElement({
