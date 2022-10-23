@@ -73,7 +73,7 @@ export default function manageTasks(passedTasks) {
       btnsToRemove.forEach(btn => {
         btn.classList.add('hidden')
       })
-      const updateDiv = createElement({element:'div', className: 'updateDiv', domId: 'updateDiv'})
+      const updateDiv = createElement({element:'form', className: 'updateDiv', domId: 'updateDiv'})
       taskDetailsDiv.appendChild(updateDiv)
       const name = createElement({
         element: 'input', 
@@ -82,7 +82,10 @@ export default function manageTasks(passedTasks) {
         domName: 'taskName',
         domValue: passedTasks[i].name
       })
+      name.setAttribute('required', 'required')
+      name.setAttribute('maxlength', '20')
       updateDiv.appendChild(name)
+
       const description = createElement({
         element: 'input', 
         domType:'text',
@@ -90,6 +93,8 @@ export default function manageTasks(passedTasks) {
         domName: 'updateTaskDescription',
         domValue: passedTasks[i].description
       })
+      description.setAttribute('required', 'required')
+      description.setAttribute('maxlength', '20')
       updateDiv.appendChild(description)
 
       const priority = createElement({
@@ -132,13 +137,15 @@ export default function manageTasks(passedTasks) {
 
       const save = createElement({
         element: 'button', 
-        domType: 'button',
+        domType: 'submit',
         domId: 'updateSave',
         domText: 'Save'
       })
       updateDiv.appendChild(save)
 
-      save.addEventListener('click', () => {
+      updateDiv.addEventListener('submit', (e) => {
+        e.preventDefault()
+
         const taskIndexToUpdate = tasks.findIndex((obj) => obj.id === passedTasks[i].id)
         passedTasks[taskIndexToUpdate].name = name.value
         passedTasks[taskIndexToUpdate].description = description.value
