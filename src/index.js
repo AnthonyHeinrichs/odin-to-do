@@ -1,25 +1,32 @@
-import './global-style.css';
-import './components/styles/projects.css'
-import './components/styles/tasks.css'
+import "./global-style.css";
+import "./components/styles/projects.css";
+import "./components/styles/tasks.css";
 import initialPageLayout from "./components/layouts/initial-page-layout";
-import NewTaskForm from './components/new-task-form'
-import filterTasks from './components/filter-tasks'
-import updateFilterDom from './components/update-filter-dom'
-import createElement from './utils/create-element'
-import checklistIcon from './assets/checklist.png'
-import { v4 as uniqueId } from 'uuid'
+import NewTaskForm from "./components/new-task-form";
+import filterTasks from "./components/filter-tasks";
+import updateFilterDom from "./components/update-filter-dom";
+import createElement from "./utils/create-element";
+import checklistIcon from "./assets/checklist.png";
+import { v4 as uniqueId } from "uuid";
 
-initialPageLayout()
-NewTaskForm()
+initialPageLayout();
+NewTaskForm();
 
-const tasks = []
-const projects = ['No project']
+const tasks = [];
+const projects = ["No project"];
 
 // Tasks
 
-let currentPage = 'main'
+let currentPage = "main";
 
-const task = (taskId, taskName, taskDescription, taskPriority, taskProject, dueDate) => {
+const task = (
+  taskId,
+  taskName,
+  taskDescription,
+  taskPriority,
+  taskProject,
+  dueDate
+) => {
   return {
     id: taskId,
     complete: false,
@@ -27,154 +34,178 @@ const task = (taskId, taskName, taskDescription, taskPriority, taskProject, dueD
     description: taskDescription,
     priority: taskPriority,
     project: taskProject,
-    due: dueDate
-  }
-}
+    due: dueDate,
+  };
+};
 
-filterTasks(tasks, 'main', projects)
-updateFilterDom(currentPage)
+filterTasks(tasks, "main", projects);
+updateFilterDom(currentPage);
 
-const newTask = document.getElementById('newTaskForm')
-const newTaskDiv = document.getElementById('formDiv')
-  
-newTask.addEventListener('submit', e => {
-  e.preventDefault()
+const newTask = document.getElementById("newTaskForm");
+const newTaskDiv = document.getElementById("formDiv");
 
-  let id = uniqueId()
-  let name = e.target.elements.taskName.value
-  let description = e.target.elements.taskDescription.value
-  let priority = e.target.elements.priority.value
-  let project = e.target.elements.project.value
-  let due = e.target.elements.dueDate.value
+newTask.addEventListener("submit", (e) => {
+  e.preventDefault();
 
-  let createdTask = task(id, name, description, priority, project, due)
-  tasks.push(createdTask)
-  
-  e.target.reset()
-  newTaskDiv.classList.add('hidden')
-  filterTasks(tasks, currentPage, projects)
-})
+  let id = uniqueId();
+  let name = e.target.elements.taskName.value;
+  let description = e.target.elements.taskDescription.value;
+  let priority = e.target.elements.priority.value;
+  let project = e.target.elements.project.value;
+  let due = e.target.elements.dueDate.value;
 
-const allTasks = document.getElementById('allTasks')
-allTasks.addEventListener('click', () => {
-  currentPage = 'main'
-  updateFilterDom(currentPage)
-  filterTasks(tasks, currentPage, projects)
-})
+  let createdTask = task(id, name, description, priority, project, due);
+  tasks.push(createdTask);
 
-const dueToday = document.getElementById('dueToday')
-dueToday.addEventListener('click', () => {
-  currentPage = 'due today'
-  updateFilterDom(currentPage)
-  filterTasks(tasks, currentPage, projects)
-})
+  e.target.reset();
+  newTaskDiv.classList.add("hidden");
+  filterTasks(tasks, currentPage, projects);
+});
 
-const dueThisWeek = document.getElementById('dueThisWeek')
-dueThisWeek.addEventListener('click', () => {
-  currentPage = 'due this week'
-  updateFilterDom(currentPage)
-  filterTasks(tasks, currentPage, projects)
-})
+const allTasks = document.getElementById("allTasks");
+allTasks.addEventListener("click", () => {
+  currentPage = "main";
+  updateFilterDom(currentPage);
+  filterTasks(tasks, currentPage, projects);
+});
 
-const completeTasks = document.getElementById('completedTasksFilter')
-completeTasks.addEventListener('click', () => {
-  currentPage = 'complete'
-  updateFilterDom(currentPage)
-  filterTasks(tasks, currentPage, projects)
-})
+const dueToday = document.getElementById("dueToday");
+dueToday.addEventListener("click", () => {
+  currentPage = "due today";
+  updateFilterDom(currentPage);
+  filterTasks(tasks, currentPage, projects);
+});
 
-export { tasks }
+const dueThisWeek = document.getElementById("dueThisWeek");
+dueThisWeek.addEventListener("click", () => {
+  currentPage = "due this week";
+  updateFilterDom(currentPage);
+  filterTasks(tasks, currentPage, projects);
+});
+
+const completeTasks = document.getElementById("completedTasksFilter");
+completeTasks.addEventListener("click", () => {
+  currentPage = "complete";
+  updateFilterDom(currentPage);
+  filterTasks(tasks, currentPage, projects);
+});
+
+export { tasks };
 // Projects
 
-const projectDropDown = document.getElementById('taskProject')
+const projectDropDown = document.getElementById("taskProject");
 
 if (projects.length > 0) {
   for (let i = 0; i < projects.length; i++) {
-    const project = createElement({element: 'option', domValue: projects[i], domText: projects[i]})
-    projectDropDown.appendChild(project) 
+    const project = createElement({
+      element: "option",
+      domValue: projects[i],
+      domText: projects[i],
+    });
+    projectDropDown.appendChild(project);
   }
 }
 
-const addProjectButton = document.getElementById('newProject')
-const newProjectContainer = document.getElementById('newProjectsContainer')
-const projectForm = createElement({element: 'form', domId: 'projectForm', className:'hidden'})
-newProjectContainer.insertAdjacentElement('beforebegin', projectForm)
+const addProjectButton = document.getElementById("newProject");
+const newProjectContainer = document.getElementById("newProjectsContainer");
+const projectForm = createElement({
+  element: "form",
+  domId: "projectForm",
+  className: "hidden",
+});
+newProjectContainer.insertAdjacentElement("beforebegin", projectForm);
 
 const newProjectName = createElement({
-  element: 'input', 
-  domType:'text',
-  domId: 'projectName',
-  domName: 'projectName',
-  domPlaceholder: 'Project name...'
-})
-projectForm.appendChild(newProjectName)
+  element: "input",
+  domType: "text",
+  domId: "projectName",
+  domName: "projectName",
+  domPlaceholder: "Project name...",
+});
+projectForm.appendChild(newProjectName);
 
-const buttonDiv = createElement({element: 'div', className: 'projectFormButtons'})
-projectForm.appendChild(buttonDiv)
+const buttonDiv = createElement({
+  element: "div",
+  className: "projectFormButtons",
+});
+projectForm.appendChild(buttonDiv);
 
 const saveButton = createElement({
-  element: 'input',
-  className: 'projectsSaveButton',
-  domType: 'submit',
-  domValue: 'Save'
-})
-buttonDiv.appendChild(saveButton)
+  element: "input",
+  className: "projectsSaveButton",
+  domType: "submit",
+  domValue: "Save",
+});
+buttonDiv.appendChild(saveButton);
 
 const cancelButton = createElement({
-  element: 'button',
-  className: 'projectsCancelButton',
-  domType: 'button',
-  domText: 'Cancel',
-  domId: 'projectsCancelBtn'
-})
-buttonDiv.appendChild(cancelButton)
+  element: "button",
+  className: "projectsCancelButton",
+  domType: "button",
+  domText: "Cancel",
+  domId: "projectsCancelBtn",
+});
+buttonDiv.appendChild(cancelButton);
 
-addProjectButton.addEventListener('click', () => {
-  projectForm.classList.remove('hidden')
-})
+addProjectButton.addEventListener("click", () => {
+  projectForm.classList.remove("hidden");
+});
 
-cancelButton.addEventListener('click', () => {
-  projectForm.classList.add('hidden')
-})
+cancelButton.addEventListener("click", () => {
+  projectForm.classList.add("hidden");
+});
 
-projectForm.addEventListener('submit', e => {
-  e.preventDefault()
+projectForm.addEventListener("submit", (e) => {
+  e.preventDefault();
 
-  const name = e.target.elements.projectName.value
+  const name = e.target.elements.projectName.value;
 
-  projects.push(name)
-  addProjectToTaskForm(name)
-  addProjectToProjectList(name)
-  e.target.reset()
-  projectForm.classList.add('hidden')
-})
+  projects.push(name);
+  addProjectToTaskForm(name);
+  addProjectToProjectList(name);
+  e.target.reset();
+  projectForm.classList.add("hidden");
+});
 
-const projectListDiv = createElement({element: 'div', className: 'createdProjects', domId: 'createdProjects'})
-projectForm.insertAdjacentElement('beforebegin', projectListDiv)
+const projectListDiv = createElement({
+  element: "div",
+  className: "createdProjects",
+  domId: "createdProjects",
+});
+projectForm.insertAdjacentElement("beforebegin", projectListDiv);
 
 const addProjectToProjectList = (name) => {
-  const singleProjectDiv = createElement({element:'div', className:'singleProject'})
+  const singleProjectDiv = createElement({
+    element: "div",
+    className: "singleProject",
+  });
   const projectIcon = createElement({
-    element: 'img', 
-    domSrc: checklistIcon, 
-    className:'checklistIcon'
-  })
-  const project = createElement({element: 'button', className: 'project', domText: name})
-  const options = document.getElementById('taskProject')
-  singleProjectDiv.appendChild(projectIcon)
-  singleProjectDiv.appendChild(project)
-  projectListDiv.appendChild(singleProjectDiv)
-  project.addEventListener('click', () => {
-    currentPage = project.innerHTML
-    filterTasks(tasks, currentPage, projects)
-    updateFilterDom(currentPage)
-    options.value = currentPage
-  }) 
-}
+    element: "img",
+    domSrc: checklistIcon,
+    className: "checklistIcon",
+  });
+  const project = createElement({
+    element: "button",
+    className: "project",
+    domText: name,
+  });
+  const options = document.getElementById("taskProject");
+  singleProjectDiv.appendChild(projectIcon);
+  singleProjectDiv.appendChild(project);
+  projectListDiv.appendChild(singleProjectDiv);
+  project.addEventListener("click", () => {
+    currentPage = project.innerHTML;
+    filterTasks(tasks, currentPage, projects);
+    updateFilterDom(currentPage);
+    options.value = currentPage;
+  });
+};
 
 const addProjectToTaskForm = (name) => {
-  const project = createElement({element: 'option', domValue: name, domText: name})
-  projectDropDown.appendChild(project)
-}
-
-
+  const project = createElement({
+    element: "option",
+    domValue: name,
+    domText: name,
+  });
+  projectDropDown.appendChild(project);
+};

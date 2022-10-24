@@ -1,6 +1,6 @@
 .task {
   margin-left: 48px;
-  background: #EFEFEF;
+  background: #efefef;
   width: 65vw;
   height: 60px;
   margin-left: 48px;
@@ -9,7 +9,7 @@
 }
 
 .opacTask {
-  opacity: .5;
+  opacity: 0.5;
 }
 
 .taskExpanded {

@@ -1,5 +1,5 @@
 .noTaskContainer {
-  background: #EFEFEF;
+  background: #efefef;
   width: 65vw;
   height: 40px;
   margin-left: 48px;
@@ -8,7 +8,7 @@
 }
 
 .noTaskText {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-style: italic;
   padding: 8px;
 }

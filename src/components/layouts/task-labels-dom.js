@@ -1,48 +1,47 @@
 import createElement from "../../utils/create-element";
-import '../styles/task-labels.css'
+import "../styles/task-labels.css";
 
 export default function TaskLabels() {
-
   const taskLabelsDiv = createElement({
-    element: 'div',
-    className: 'taskLabels',
-    domId: 'taskLabelsDiv'
-  })
+    element: "div",
+    className: "taskLabels",
+    domId: "taskLabelsDiv",
+  });
 
   const taskName = createElement({
-    element: 'p', 
-    className: 'nameLabel', 
-    domText: 'Task:'
-  })
-  taskLabelsDiv.appendChild(taskName)
+    element: "p",
+    className: "nameLabel",
+    domText: "Task:",
+  });
+  taskLabelsDiv.appendChild(taskName);
 
   const taskDescription = createElement({
-    element: 'p', 
-    className: 'descriptionLabel', 
-    domText: 'Description:'
-  })
-  taskLabelsDiv.appendChild(taskDescription)
+    element: "p",
+    className: "descriptionLabel",
+    domText: "Description:",
+  });
+  taskLabelsDiv.appendChild(taskDescription);
 
   const taskPriority = createElement({
-    element: 'p', 
-    className: 'priorityLabel', 
-    domText: 'Priority:'
-  })
-  taskLabelsDiv.appendChild(taskPriority)
+    element: "p",
+    className: "priorityLabel",
+    domText: "Priority:",
+  });
+  taskLabelsDiv.appendChild(taskPriority);
 
   const taskProject = createElement({
-    element: 'p', 
-    className: 'projectLabel', 
-    domText: 'Project:'
-  })
-  taskLabelsDiv.appendChild(taskProject)
+    element: "p",
+    className: "projectLabel",
+    domText: "Project:",
+  });
+  taskLabelsDiv.appendChild(taskProject);
 
   const taskDueDate = createElement({
-    element: 'p', 
-    className: 'dueDateLabel', 
-    domText: 'Due:'
-  })
-  taskLabelsDiv.appendChild(taskDueDate)
+    element: "p",
+    className: "dueDateLabel",
+    domText: "Due:",
+  });
+  taskLabelsDiv.appendChild(taskDueDate);
 
-  return taskLabelsDiv
+  return taskLabelsDiv;
 }
