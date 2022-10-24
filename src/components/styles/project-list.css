@@ -1,5 +1,5 @@
 .projectsTitle {
-  color: #0E0080;
+  color: #0e0080;
   font-weight: 500;
   margin-left: 48px;
   margin-top: 48px;
@@ -22,9 +22,9 @@
 
 .newProjectButton {
   border: none;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 300;
   font-size: 18px;
   margin-top: 12px;
-  color: #0E0080;
+  color: #0e0080;
 }

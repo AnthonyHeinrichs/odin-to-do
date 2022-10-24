@@ -12,11 +12,11 @@
 }
 
 .newTaskButton {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   border: none;
   background: none;
   font-size: 18px;
   font-weight: 300;
-  color: #0E0080;
+  color: #0e0080;
   cursor: pointer;
 }

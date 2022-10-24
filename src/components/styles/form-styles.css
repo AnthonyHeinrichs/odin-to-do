@@ -12,7 +12,7 @@
   border-top: none;
   border-left: none;
   border-right: none;
-  border-bottom: solid #5A49E3;
+  border-bottom: solid #5a49e3;
   background: transparent;
 }
 
@@ -23,7 +23,7 @@
   border-top: none;
   border-left: none;
   border-right: none;
-  border-bottom: solid #5A49E3;
+  border-bottom: solid #5a49e3;
   background: transparent;
 }
 
@@ -54,7 +54,7 @@
 .saveButton {
   border: none;
   font-size: 16px;
-  background: #B3F8B1;
+  background: #b3f8b1;
   border-radius: 2px;
   padding: 6px;
   width: 80px;
@@ -64,12 +64,13 @@
 .cancelButton {
   border: none;
   font-size: 16px;
-  background: #F9AFAF;
+  background: #f9afaf;
   border-radius: 2px;
   padding: 6px;
   width: 80px;
 }
 
-textarea:focus, input:focus{
+textarea:focus,
+input:focus {
   outline: none;
 }
