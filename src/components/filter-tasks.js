@@ -20,7 +20,7 @@ export default function filterTasks(tasks, page, projects) {
     options.value = "No project";
   } else if (page === "due this week") {
     let tasksDueThisWeek = tasks.filter((el) => {
-      return isThisWeek(Date.parse(el.due), 1) && (el.complete == false);
+      return isThisWeek(Date.parse(el.due)) && (el.complete == false);
     });
     manageTasks(tasksDueThisWeek, projects);
     options.value = "No project";
