@@ -41,9 +41,6 @@ const task = (
   };
 };
 
-const newTaskForDesign = task(1, 'Test', 'This is to help with the styling work, and if I add more details now what?', 'high', 'no project', '10-20-2020')
-tasks.push(newTaskForDesign);
-
 filterTasks(tasks, "main", projects);
 updateFilterDom(currentPage);
 
