@@ -25,7 +25,7 @@ export default function manageTasks(passedTasks, passedProjects) {
       element: "input",
       domType: "checkbox",
       domName: "complete",
-      className: 'checkbox',
+      className: "checkbox",
     });
     if (passedTasks[i].complete) {
       taskCheckbox.setAttribute("checked", "checked");
@@ -116,6 +116,7 @@ export default function manageTasks(passedTasks, passedProjects) {
       btnsToRemove.forEach((btn) => {
         btn.classList.add("hidden");
       });
+      taskDeleteBtn.classList.add("hidden");
       const updateDiv = createElement({
         element: "form",
         className: "updateDiv",
@@ -195,8 +196,8 @@ export default function manageTasks(passedTasks, passedProjects) {
           domText: passedProjects[p],
         });
         if (passedProjects[p] === passedTasks[i].project) {
-          console.log('set attribute')
-          projectOption.setAttribute("selected", "selected")
+          console.log("set attribute");
+          projectOption.setAttribute("selected", "selected");
         }
         project.appendChild(projectOption);
       }
@@ -236,6 +237,7 @@ export default function manageTasks(passedTasks, passedProjects) {
         taskDueDate.innerHTML = due.value;
         updateDiv.classList.add("hidden");
         taskUpdateBtn.classList.remove("hidden");
+        taskDeleteBtn.classList.remove("hidden");
         btnsToRemove.forEach((btn) => {
           btn.classList.remove("hidden");
         });
