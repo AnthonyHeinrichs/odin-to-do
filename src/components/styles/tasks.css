@@ -1,11 +1,9 @@
 .task {
-  margin-left: 48px;
   background: #efefef;
-  width: 65vw;
-  height: 60px;
-  margin-left: 48px;
-  margin-top: 24px;
+  flex: 1 1 0%;
+  margin: 24px 48px 24px 48px;
   border-radius: 5px;
+  height: 80px;
 }
 
 .opacTask {
@@ -26,7 +24,7 @@
   right: 0;
 }
 
-.updateBtn {
+.updateBtn, .deleteBtn {
   margin-right: 12px;
   margin-bottom: 12px;
 }
@@ -37,26 +35,23 @@
   height: 100%;
 }
 
-.name {
-  width: 200px;
-  margin-left: 12px;
+.name, .priority, .projectRef, .due, .description {
+  width: calc(60px + 10vw);
+  margin-left: 24px;
+  margin-right: 12px;
 }
 
 .description {
-  width: 300px;
-  margin-left: 95px;
+  width: calc(80px + 10vw);
+  min-width: 60px;
 }
 
-.priority {
-  width: 100px;
-  margin-left: 80px;
+.description {
+  text-overflow: ellipsis; 
+  overflow: hidden; 
+  white-space: nowrap;
 }
 
-.projectRef {
-  width: 80px;
-  margin-left: 80px;
-}
-
-.due {
-  margin-left: 165px;
+.checkbox {
+  margin-left: 12px;
 }

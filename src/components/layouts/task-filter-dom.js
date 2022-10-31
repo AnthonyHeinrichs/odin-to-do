@@ -15,7 +15,7 @@ export default function TaskFiltersDom() {
 
   const filterTitle = createElement({
     element: "h2",
-    className: "filterTitle",
+    className: "filterListTitle",
     domText: "Filters",
   });
   mainFilterDiv.appendChild(filterTitle);
