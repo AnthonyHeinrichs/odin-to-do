@@ -187,12 +187,16 @@ export default function manageTasks(passedTasks, passedProjects) {
         domName: "project",
       });
 
-      for (let i = 0; i < passedProjects.length; i++) {
+      for (let p = 0; p < passedProjects.length; p++) {
         let projectOption = createElement({
           element: "option",
-          domValue: passedProjects[i],
-          domText: passedProjects[i],
+          domValue: passedProjects[p],
+          domText: passedProjects[p],
         });
+        if (passedProjects[p] === passedTasks[i].project) {
+          console.log('set attribute')
+          projectOption.setAttribute("selected", "selected")
+        }
         project.appendChild(projectOption);
       }
       updateDiv.appendChild(project);
