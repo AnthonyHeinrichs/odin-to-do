@@ -6,7 +6,8 @@ import NewTaskForm from "./components/new-task-form";
 import filterTasks from "./components/filter-tasks";
 import updateFilterDom from "./components/update-filter-dom";
 import createElement from "./utils/create-element";
-import checklistIcon from "./assets/checklist.png";
+import ProjectShowDom from "./components/layouts/show-project-list-dom";
+import ProjectFormDom from "./components/layouts/project-form-dom";
 import { v4 as uniqueId } from "uuid";
 
 initialPageLayout();
@@ -91,7 +92,9 @@ completeTasks.addEventListener("click", () => {
 });
 
 export { tasks };
+
 // Projects
+ProjectFormDom()
 
 const projectDropDown = document.getElementById("taskProject");
 
@@ -106,54 +109,7 @@ if (projects.length > 0) {
   }
 }
 
-const addProjectButton = document.getElementById("newProject");
-const newProjectContainer = document.getElementById("newProjectsContainer");
-const projectForm = createElement({
-  element: "form",
-  domId: "projectForm",
-  className: "hidden",
-});
-newProjectContainer.insertAdjacentElement("beforebegin", projectForm);
-
-const newProjectName = createElement({
-  element: "input",
-  domType: "text",
-  domId: "projectName",
-  domName: "projectName",
-  domPlaceholder: "Project name...",
-});
-projectForm.appendChild(newProjectName);
-
-const buttonDiv = createElement({
-  element: "div",
-  className: "projectFormButtons",
-});
-projectForm.appendChild(buttonDiv);
-
-const saveButton = createElement({
-  element: "input",
-  className: "projectsSaveButton",
-  domType: "submit",
-  domValue: "Save",
-});
-buttonDiv.appendChild(saveButton);
-
-const cancelButton = createElement({
-  element: "button",
-  className: "projectsCancelButton",
-  domType: "button",
-  domText: "Cancel",
-  domId: "projectsCancelBtn",
-});
-buttonDiv.appendChild(cancelButton);
-
-addProjectButton.addEventListener("click", () => {
-  projectForm.classList.remove("hidden");
-});
-
-cancelButton.addEventListener("click", () => {
-  projectForm.classList.add("hidden");
-});
+const projectForm = document.getElementById('projectForm')
 
 projectForm.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -162,7 +118,7 @@ projectForm.addEventListener("submit", (e) => {
 
   projects.push(name);
   addProjectToTaskForm(name);
-  addProjectToProjectList(name);
+  ProjectShowDom(tasks, projects, currentPage, name);
   e.target.reset();
   projectForm.classList.add("hidden");
 });
@@ -173,33 +129,6 @@ const projectListDiv = createElement({
   domId: "createdProjects",
 });
 projectForm.insertAdjacentElement("beforebegin", projectListDiv);
-
-const addProjectToProjectList = (name) => {
-  const singleProjectDiv = createElement({
-    element: "div",
-    className: "singleProject",
-  });
-  const projectIcon = createElement({
-    element: "img",
-    domSrc: checklistIcon,
-    className: "checklistIcon",
-  });
-  const project = createElement({
-    element: "button",
-    className: "project",
-    domText: name,
-  });
-  const options = document.getElementById("taskProject");
-  singleProjectDiv.appendChild(projectIcon);
-  singleProjectDiv.appendChild(project);
-  projectListDiv.appendChild(singleProjectDiv);
-  project.addEventListener("click", () => {
-    currentPage = project.innerHTML;
-    filterTasks(tasks, currentPage, projects);
-    updateFilterDom(currentPage);
-    options.value = currentPage;
-  });
-};
 
 const addProjectToTaskForm = (name) => {
   const project = createElement({
