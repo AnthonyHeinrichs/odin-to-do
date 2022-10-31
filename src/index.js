@@ -5,6 +5,7 @@ import initialPageLayout from "./components/layouts/initial-page-layout";
 import NewTaskForm from "./components/new-task-form";
 import filterTasks from "./components/filter-tasks";
 import updateFilterDom from "./components/update-filter-dom";
+import dynamicWebpage from './components/dynamic-webpage'
 import createElement from "./utils/create-element";
 import ProjectShowDom from "./components/layouts/show-project-list-dom";
 import ProjectFormDom from "./components/layouts/project-form-dom";
@@ -12,6 +13,7 @@ import { v4 as uniqueId } from "uuid";
 
 initialPageLayout();
 NewTaskForm();
+dynamicWebpage();
 
 const tasks = [];
 const projects = ["No project"];
@@ -39,6 +41,9 @@ const task = (
   };
 };
 
+const newTaskForDesign = task(1, 'Test', 'This is to help with the styling work, and if I add more details now what?', 'high', 'no project', '10-20-2020')
+tasks.push(newTaskForDesign);
+
 filterTasks(tasks, "main", projects);
 updateFilterDom(currentPage);
 
@@ -63,8 +68,14 @@ newTask.addEventListener("submit", (e) => {
   filterTasks(tasks, currentPage, projects);
 });
 
+const leftColumn = document.getElementById('leftColumn')
+const menuToggle = document.getElementById('menuToggle')
 const allTasks = document.getElementById("allTasks");
 allTasks.addEventListener("click", () => {
+  if (window.innerWidth < 700) {
+    leftColumn.classList.add('hidden')
+  }
+  menuToggle.checked = false
   currentPage = "main";
   updateFilterDom(currentPage);
   filterTasks(tasks, currentPage, projects);
@@ -72,6 +83,10 @@ allTasks.addEventListener("click", () => {
 
 const dueToday = document.getElementById("dueToday");
 dueToday.addEventListener("click", () => {
+  if (window.innerWidth < 700) {
+    leftColumn.classList.add('hidden')
+  }
+  menuToggle.checked = false
   currentPage = "due today";
   updateFilterDom(currentPage);
   filterTasks(tasks, currentPage, projects);
@@ -79,6 +94,10 @@ dueToday.addEventListener("click", () => {
 
 const dueThisWeek = document.getElementById("dueThisWeek");
 dueThisWeek.addEventListener("click", () => {
+  if (window.innerWidth < 700) {
+    leftColumn.classList.add('hidden')
+  }
+  menuToggle.checked = false
   currentPage = "due this week";
   updateFilterDom(currentPage);
   filterTasks(tasks, currentPage, projects);
@@ -86,6 +105,10 @@ dueThisWeek.addEventListener("click", () => {
 
 const completeTasks = document.getElementById("completedTasksFilter");
 completeTasks.addEventListener("click", () => {
+  if (window.innerWidth < 700) {
+    leftColumn.classList.add('hidden')
+  }
+  menuToggle.checked = false
   currentPage = "complete";
   updateFilterDom(currentPage);
   filterTasks(tasks, currentPage, projects);

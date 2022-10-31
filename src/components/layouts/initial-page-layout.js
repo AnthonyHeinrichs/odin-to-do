@@ -30,8 +30,22 @@ export default function initialPageLayout() {
   });
   mainDiv.appendChild(rightColumnDiv);
 
-  const headerDiv = createElement({ element: "div", className: "header" });
+  const headerDiv = createElement({ element: "div", className: "header", domId:'header' });
   rightColumnDiv.appendChild(headerDiv);
+
+  const hamburgerDiv = createElement({element: 'div', className: 'hamburgerDiv', domId:'hamburgerDiv'})
+
+  const menuToggle = createElement({ element: 'input', domId: 'menuToggle', domType: 'checkbox'})
+  hamburgerDiv.appendChild(menuToggle)
+
+  const menuToggleBtn = createElement({element: 'label', className: 'menuToggleBtn'})
+  menuToggleBtn.setAttribute('for', 'menuToggle')
+  hamburgerDiv.appendChild(menuToggleBtn)
+
+  const span = createElement({element: 'span'})
+  menuToggleBtn.appendChild(span)
+
+  headerDiv.appendChild(hamburgerDiv)
 
   // Creating a div for the logo to be centered in
   const logoCenter = createElement({ element: "div", className: "logoCenter" });

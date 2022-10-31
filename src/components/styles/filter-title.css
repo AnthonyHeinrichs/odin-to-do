@@ -7,7 +7,7 @@
 
 .title {
   margin-left: 48px;
-  font-size: 48px;
+  font-size: calc(24px + 0.5vw);
   color: #0e0080;
   font-weight: 600;
 }
@@ -15,7 +15,7 @@
 .filterDescription {
   margin-left: 48px;
   margin-top: 12px;
-  font-size: 24px;
+  font-size: calc(16px + 0.5vw);
   color: #0e0080;
   font-weight: 300;
 }

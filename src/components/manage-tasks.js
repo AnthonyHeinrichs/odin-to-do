@@ -25,6 +25,7 @@ export default function manageTasks(passedTasks, passedProjects) {
       element: "input",
       domType: "checkbox",
       domName: "complete",
+      className: 'checkbox',
     });
     if (passedTasks[i].complete) {
       taskCheckbox.setAttribute("checked", "checked");

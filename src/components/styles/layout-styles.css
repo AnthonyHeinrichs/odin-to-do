@@ -5,27 +5,37 @@
 .leftColumn {
   height: 100vh;
   min-height: 100%;
-  width: 20vw;
+  width: 25vw;
   background: #efefef;
 }
 
 .rightColumn {
   height: 100vh;
   min-height: 100%;
-  width: 80vw;
+  width: 75vw;
 }
 
 .header {
   height: 200px;
-  width: 80vw;
+  width: 75vw;
   background: #d9d9d9;
   box-shadow: 7px -2px 5px 7px rgba(0, 0, 0, 0.33);
+}
+
+@media screen and (max-width: 700px) {
+  .leftColumn {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    animation: slide 1s infinite;
+  }
 }
 
 .logoCenter,
 .lineCenter {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .icon {
@@ -35,6 +45,58 @@
 
 .line {
   height: 2px;
-  width: 15vw;
+  width: 22vw;
   background: #5a49e3;
+}
+
+.hamburgerDiv {
+  position: absolute;
+}
+
+#menuToggle {
+  opacity: 0;
+}
+#menuToggle:checked + .menuToggleBtn > span {
+  transform: rotate(45deg);
+}
+#menuToggle:checked + .menuToggleBtn > span::before {
+  top: 0;
+  transform: rotate(0deg);
+}
+#menuToggle:checked + .menuToggleBtn > span::after {
+  top: 0;
+  transform: rotate(90deg);
+}
+#menuToggle:checked ~ .leftColumn {
+  position: absolute !important;
+  width: 100vw !important;
+  height: 100vw !important;
+}
+
+.menuToggleBtn {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  width: 26px;
+  height: 26px;
+  cursor: pointer;
+  z-index: 1;
+}
+.menuToggleBtn > span,
+.menuToggleBtn > span::before,
+.menuToggleBtn > span::after {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #616161;
+  transition-duration: .25s;
+}
+.menuToggleBtn > span::before {
+  content: '';
+  top: -8px;
+}
+.menuToggleBtn > span::after {
+  content: '';
+  top: 8px;
 }
