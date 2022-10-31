@@ -86,10 +86,12 @@ export default function manageTasks(passedTasks, passedProjects) {
         passedTasks[i].complete = true;
         taskDiv.classList.add("hidden");
         taskCheckbox.setAttribute("checked", "checked");
+        localStorage.setItem('tasks', JSON.stringify(passedTasks));
       } else {
         passedTasks[i].complete = false;
         taskDiv.classList.add("hidden");
         taskCheckbox.setAttribute("checked", "unchecked");
+        localStorage.setItem('tasks', JSON.stringify(passedTasks));
       }
     });
 
@@ -196,7 +198,6 @@ export default function manageTasks(passedTasks, passedProjects) {
           domText: passedProjects[p],
         });
         if (passedProjects[p] === passedTasks[i].project) {
-          console.log("set attribute");
           projectOption.setAttribute("selected", "selected");
         }
         project.appendChild(projectOption);
@@ -241,6 +242,7 @@ export default function manageTasks(passedTasks, passedProjects) {
         btnsToRemove.forEach((btn) => {
           btn.classList.remove("hidden");
         });
+        localStorage.setItem('tasks', JSON.stringify(tasks));
       });
     });
 
@@ -249,6 +251,7 @@ export default function manageTasks(passedTasks, passedProjects) {
         (obj) => obj.id === passedTasks[i].id
       );
       tasks.splice(taskIndexToRemove, 1);
+      localStorage.setItem('tasks', JSON.stringify(tasks));
       taskDiv.remove();
     });
   }

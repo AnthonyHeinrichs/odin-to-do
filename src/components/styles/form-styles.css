@@ -55,8 +55,8 @@
   font-size: 16px;
   background: #b3f8b1;
   border-radius: 2px;
-  padding: 6px;
   width: 80px;
+  padding: 6px;
   margin-right: 24px;
   margin-left: 24px;
   margin-top: 24px;
@@ -69,6 +69,7 @@
   border-radius: 2px;
   padding: 6px;
   width: 80px;
+  margin-top: 24px;
 }
 
 textarea:focus,
